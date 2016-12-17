@@ -1,16 +1,35 @@
 // Resets, Clearfix, etc
 
+@import "./partials/reset";
+@import "./partials/clearfix";
+
 // Variables
+
+// @import "./variables";
+
+$dark-color: #222;
+$light-color: #EEE;
+$bright-color: orange;
+$global-padding: 20px;
  
 // Media Query Ranges 
+
  
 // Mixins
+@mixin block_font($block_font_size, $block_font_color){
+  font-size: $block_font_size;
+  color: $block_font_color; 
+}
+
+// @imports "./mixins";
 
 // Styles
+//small 
+
 body{
-  background-color: orange;
+  background-color: $bright-color;
   text-align: center;
-  color: #EEE;
+  color: $dark-color;
 }
  
 h1, h2, h3, h4{
@@ -18,10 +37,12 @@ h1, h2, h3, h4{
 }
  
 h1{
-  padding: 20px;
+   @include block_font(55px, $dark-color); 
+  padding: $global-padding;
 }
  
 h2{
+   @include block_font(35px, $light-color); 
  
 }
  
@@ -32,7 +53,90 @@ h2{
 }
  
 .block_family li{
-  background-color: #222;
-  margin-bottom: 20px;
-  padding: 20px;
+  background-color: $dark-color;
+  margin-bottom: $global-padding;
+  padding: $global-padding;
+}
+
+
+// @import "./media-queries"
+
+
+
+
+//medium 
+@media screen and (min-width: 600px) {
+ body{
+  background-color: $bright-color;
+  text-align: center;
+  color: $light-color;
+}
+ 
+h1, h2, h3, h4{
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+ 
+h1{
+  @include block_font(55px, $light-color); //this uses mixins
+  padding: $global-padding;
+}
+
+ 
+h2{
+ @include block_font(35px, $bright-color);
+ background-color: $light-color;
+}
+ 
+ 
+.block_family{
+  max-width:500px;
+  margin:auto;
+}
+ 
+.block_family li{
+  background-color: $light-color;
+  margin-bottom: $global-padding;
+  padding: $global-padding;
+  width: 90%; 
+  display: inline-block;
+}
+
+}
+
+//large
+@media screen and (min-width: 900px) {
+ body{
+  background-color: $dark-color;
+  text-align: center;
+  color: $bright-color;
+}
+ 
+h1, h2, h3, h4{
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+ 
+h1{
+ @include block_font(3.5rem, $bright-color); 
+ 
+}
+
+h2{
+  @include block_font(35px, $dark-color);
+  background-color: $bright-color;
+  padding: $global-padding;
+ 
+}
+ 
+ 
+.block_family{
+  max-width:90%;
+  margin:auto;
+}
+ 
+.block_family li{
+  background-color: $dark-color;
+  margin-bottom: $global-padding;
+  padding: $global-padding;
+}
+
 }

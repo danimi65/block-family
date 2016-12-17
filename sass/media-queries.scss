@@ -1,0 +1,71 @@
+@import "./variables";
+@imports "./mixins";
+
+
+//medium 
+@media screen and (min-width: 600px) {
+ body{
+  background-color: orange;
+  text-align: center;
+  color: $bright-color;
+}
+ 
+h1, h2, h3, h4{
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+ 
+h1{
+  // @include block_font(35px, $bright-color); //this uses mixins
+}
+ 
+h2{
+ 
+}
+ 
+ 
+.block_family{
+  max-width:350px;
+  margin:auto;
+}
+ 
+.block_family li{
+  background-color: #222;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+}
+
+//large
+@media screen and (min-width: 900px) {
+ body{
+  background-color: orange;
+  text-align: center;
+  color: $bright-color;
+}
+ 
+h1, h2, h3, h4{
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+ 
+h1{
+ // @include block_font(35px, $bright-color); 
+}
+ 
+h2{
+ 
+}
+ 
+ 
+.block_family{
+  max-width:350px;
+  margin:auto;
+}
+ 
+.block_family li{
+  background-color: #222;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+}
